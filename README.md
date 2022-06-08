@@ -1,7 +1,7 @@
 # ds_and_algorithms
 Problem solving
 
-## Repository containing solutions(in Java) to select problems in Data structures and Algorithms in the following broad areas:
+## Repository containing solutions(in Java) to select problems using Data structures and Algorithms in the following broad areas:
 1.  Arrays & Vectors
 2.  String problems
 3.  Slinding Window
