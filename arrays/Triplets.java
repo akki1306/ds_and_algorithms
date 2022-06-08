@@ -27,7 +27,7 @@ public class Triplets {
         Collections.sort(input);
         List<List<Integer>> res = new ArrayList<>();
         int n = input.size();
-        for (int i = 0; i <= n-3; i++) {
+        for (int i = 0; i < n; i++) {
             int j = i + 1;
             int k = n - 1;
             while (j < k) {
