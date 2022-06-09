@@ -12,14 +12,18 @@ public class Rains {
         int[] rightMaxArr = new int[arr.length];
 
         leftMaxArr[0] = arr[0];
+        rightMaxArr[arr.length - 1] = arr[arr.length - 1];
         for (int i = 1; i < arr.length; i++) {
             leftMaxArr[i] = Math.max(leftMaxArr[i - 1], arr[i]);
+            rightMaxArr[arr.length - i - 1] = Math.max(rightMaxArr[arr.length - i], arr[arr.length - i - 1]);
         }
 
-        rightMaxArr[arr.length - 1] = arr[arr.length - 1];
+        // below code optimized to one liner on line no. 17
+
+        /*rightMaxArr[arr.length - 1] = arr[arr.length - 1];
         for (int i = arr.length - 2; i >= 0; i--) {
             rightMaxArr[i] = Math.max(arr[i], rightMaxArr[i + 1]);
-        }
+        }*/
 
         int amountOfRainWater = 0;
         for (int i = 0; i < arr.length; i++) {
