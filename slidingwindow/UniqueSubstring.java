@@ -55,27 +55,52 @@ public class UniqueSubstring {
         Arrays.fill(map, -1);
         int windowLen = 0;
         int start = 0;
-        int end = 0;
         int maxWindowLen = Integer.MIN_VALUE;
         while (j < n) {
-            if (map[c[j]] != -1) {
-                while (i <= map[c[j]]) {
-                    i++;
-                    windowLen--;
-                }
-                map[c[j]] = -1;
-            } else {
-                map[c[j]] = j;
-                windowLen++;
+            if (map[c[j]] != -1 && map[c[j]] >= i) {
+                i = map[c[j]] + 1;
+                windowLen = j - i;
             }
+
+            map[c[j]] = j;
+            windowLen++;
+            j++;
 
             if (windowLen > maxWindowLen) {
                 maxWindowLen = windowLen;
                 start = i;
-                end = j;
             }
-            j++;
+
         }
-        return s.substring(start, end);
+        return s.substring(start, start+ maxWindowLen);
+    }
+
+    private static String uniqueString(String s) {
+        char[] c = s.toCharArray();
+        int window_len = 0;
+        int max_window = 0;
+        int start_window = 0;
+        int i = 0, j = 0;
+        int n = s.length();
+        Map<Character, Integer> m = new HashMap<>();
+
+        while (j < n) {
+            char ch = s.charAt(j);
+
+            if (m.containsKey(ch) && m.get(ch) >= i) {
+                i = m.get(ch) + 1;
+                window_len = j - i;
+            }
+
+            m.put(ch, j);
+            window_len++;
+            j++;
+
+            if (window_len > max_window) {
+                max_window = window_len;
+                start_window = i;
+            }
+        }
+        return s.substring(start_window, max_window);
     }
 }
