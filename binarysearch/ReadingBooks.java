@@ -34,10 +34,6 @@ public class ReadingBooks {
             if (current_student + arr[i] > maxPages) {
                 students++;
                 current_student = arr[i];
-
-                if (students > numStudents) {
-                    return false;
-                }
             } else {
                 current_student += arr[i];
             }

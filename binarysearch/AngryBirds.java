@@ -32,7 +32,7 @@ public class AngryBirds {
         int birds = 1;
         int location = arr[0];
 
-        for (int i = 1; i < arr.length - 1; i++) {
+        for (int i = 1; i < arr.length; i++) {
             int current_location = arr[i];
             if ((current_location - location) >= minSeperation) {
                 birds++;
