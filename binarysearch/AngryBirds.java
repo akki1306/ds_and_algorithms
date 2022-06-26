@@ -7,6 +7,7 @@ public class AngryBirds {
         System.out.println(angryBirdsMinimizeMaximumDistanceToNotLetBirdsAngry(new int[]{1, 2, 4, 8, 9}, 3));
     }
 
+    // maximize minimum distance between two birds
     private static int angryBirdsMinimizeMaximumDistanceToNotLetBirdsAngry(int[] arr, int numberOfBirds) {
         Arrays.sort(arr);
         int N = arr.length;
