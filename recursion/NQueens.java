@@ -14,7 +14,7 @@ public class NQueens {
                 for (int j = 0; j < cb[0].length; j++) {
                     System.out.print(cb[i][j] + " ");
                 }
-                System.out.println();
+                System.out.println(); //
             }
         }
     }
