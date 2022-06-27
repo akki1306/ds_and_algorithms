@@ -4,11 +4,11 @@ import java.util.Arrays;
 
 public class GameOfGreed {
     public static void main(String[] args) {
-        System.out.println(gameOfGreed(new int[]{1, 2, 3, 4}, 3));
+        System.out.println(gameOfGreedMaximizeMinimum(new int[]{1, 2, 3, 4}, 3));
     }
 
     // maximize minimum number of coins
-    private static int gameOfGreed(int[] arr, int k) {
+    private static int gameOfGreedMaximizeMinimum(int[] arr, int k) {
         Arrays.sort(arr);
         int s = arr[0];
         int e = Arrays.stream(arr).sum();
@@ -18,9 +18,9 @@ public class GameOfGreed {
             mid = (s + e) / 2;
             if (canAllocateCoins(arr, k, mid)) {
                 res = mid;
-                s = mid + 1;
+                s = mid + 1; // since the goal is to maximize hence expand search on the right side to find maximum
             } else {
-                e = mid - 1;
+                e = mid - 1; // search towards left only if allocation not possible
             }
         }
         return res;

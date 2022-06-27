@@ -19,9 +19,9 @@ public class AngryBirds {
             mid = (start + end) / 2;
             if (canPlaceBirds(arr, numberOfBirds, mid)) {
                 ans = mid;
-                start = mid + 1;
+                start = mid + 1; // maximize the distance if can place birds.
             } else {
-                end = mid - 1;
+                end = mid - 1; // if placing all birds not possible then go left.
             }
         }
         return ans;

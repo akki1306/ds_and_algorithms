@@ -7,6 +7,7 @@ public class ReadingBooks {
         System.out.println(readingBooksMinimizeMaximum(new int[]{10, 20, 30, 40}, 2));
     }
 
+    // minimize the maximum
     private static int readingBooksMinimizeMaximum(int[] arr, int numStudents) {
         int s = arr[0];
         int e = Arrays.stream(arr).sum();
@@ -15,9 +16,9 @@ public class ReadingBooks {
             mid = (s + e) / 2;
             if (canAllocateOptimally(arr, numStudents, mid)) {
                 ans = mid;
-                e = mid - 1;
+                e = mid - 1; // since the goal is to minimize expand search towards left
             } else {
-                s = mid + 1;
+                s = mid + 1; // If further expansion towards left not possible then try expanding right
             }
         }
         return ans;
