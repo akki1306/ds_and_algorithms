@@ -9,6 +9,7 @@ public class MinPairs {
         //System.out.println(lower_bound(l, 16));
     }
 
+    // linear search on one sorted array and binary search on another.
     private static int[] min_pair(int[] a1, int[] a2) {
         Arrays.sort(a2);
 

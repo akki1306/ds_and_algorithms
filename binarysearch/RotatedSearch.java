@@ -5,6 +5,7 @@ public class RotatedSearch {
         System.out.println(rotatedSearch(new int[]{7, 9, 10, 1, 2, 3, 4, 5, 6}, 10));
     }
 
+    // modified binary search on array rotated around a pivot
     private static int rotatedSearch(int[] arr, int element) {
         int start = 0;
         int end = arr.length - 1;
