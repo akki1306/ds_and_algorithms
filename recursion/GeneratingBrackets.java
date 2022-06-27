@@ -10,12 +10,12 @@ import java.util.List;
 public class GeneratingBrackets {
     public static void main(String[] args) {
         List<String> res = new ArrayList<>();
-        generateBrackets(res, "", 10, 0, 0);
+        generateBrackets(res, "", 3, 0, 0);
         System.out.println(res);
     }
 
     private static void generateBrackets(List<String> result, String currentString, int N, int openCount, int closedCount) {
-        if ((openCount + closedCount) == N && openCount == closedCount)
+        if (openCount == N && openCount == closedCount)
             result.add(currentString);
 
         if (openCount < N)
