@@ -7,9 +7,10 @@ package recursion;
  */
 public class Ladders {
     public static void main(String[] args) {
-        System.out.println(laddersNumberOfWaysToClimb(4));
+        System.out.println(laddersNumberOfWaysToClimb(5));
     }
 
+    // time complexity - exponential O(3^n)
     private static int laddersNumberOfWaysToClimb(int N) {
         if (N == 0)
             return 1;
