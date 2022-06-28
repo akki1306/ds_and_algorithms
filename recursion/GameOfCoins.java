@@ -14,10 +14,18 @@ public class GameOfCoins {
                 return 0;
 
         boolean isGreater = arr[i] > arr[j];
+        int val = Math.max(arr[i], arr[j]);
+
+        if (isGreater)
+            i++;
+        else
+            j--;
+
+        int nextRoundVal = gameOfCoins(arr, round + 1, i, j);
 
         if (round % 2 == 0)
-            return Math.max(arr[i], arr[j]) + gameOfCoins(arr, round + 1, isGreater ? i + 1 : i, !isGreater ? j - 1 : j);
+            return val + nextRoundVal;
         else
-            return gameOfCoins(arr, round + 1, isGreater ? i + 1 : i, !isGreater ? j - 1 : j);
+            return nextRoundVal;
     }
 }
