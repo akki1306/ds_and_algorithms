@@ -13,25 +13,24 @@ public class RecursiveKReverseLinkedList {
         printAll(head);
     }
 
-    private static LinkedListNode recursiveKReverse(LinkedListNode curr, int k) {
-        if (curr == null)
+    private static LinkedListNode recursiveKReverse(LinkedListNode head, int k) {
+        if (head == null)
             return null;
 
         int count = k;
-
-        LinkedListNode i = curr;
-        LinkedListNode j = null;
+        LinkedListNode curr = head;
+        LinkedListNode prev = null;
         LinkedListNode temp;
-        while (i != null && count > 0) {
-            temp = i.next;
-            i.next = j;
-            j = i;
-            i = temp;
+        while (curr != null && count > 0) {
+            temp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = temp;
             count--;
         }
 
-        curr.next = recursiveKReverse(i, k);
-        return j;
+        curr.next = recursiveKReverse(curr, k); // recursive link tail of first k batch of nodes to head of next batch.
+        return prev;   // return the head in first recursive call
     }
 
     private static void printAll(LinkedListNode head) {
