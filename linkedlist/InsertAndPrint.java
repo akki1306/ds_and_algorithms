@@ -1,6 +1,6 @@
 package linkedlist;
 
-public class LinkedListInsert {
+public class InsertAndPrint {
     public static void main(String[] args) {
         LinkedListNode head = null;
         head = insertAtHead(head, 4);
