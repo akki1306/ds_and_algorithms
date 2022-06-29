@@ -30,22 +30,49 @@ public class MergeTwoSortedLinkedLists {
         printAll(h1);
         System.out.print("H2: ");
         printAll(h2);
-        LinkedListNode h = mergeSortedLinkedList(h1.next, h2.next);
+//        LinkedListNode h = mergeSortedLinkedList(h1.next, h2.next);
+        LinkedListNode h = mergeSortedLinkedListIterative(h1.next, h2.next);
         printAll(h);
     }
 
     private static LinkedListNode mergeSortedLinkedList(LinkedListNode h1, LinkedListNode h2) {
-        if(h1 == null)
+        if (h1 == null)
             return h2;
-        if(h2 == null)
+        if (h2 == null)
             return h1;
 
         LinkedListNode node = h1.data < h2.data ? h1 : h2;
-        if(h1.data < h2.data)
+        if (h1.data < h2.data)
             node.next = mergeSortedLinkedList(h1.next, h2);
         else
             node.next = mergeSortedLinkedList(h1, h2.next);
         return node;
+    }
+
+    private static LinkedListNode mergeSortedLinkedListIterative(LinkedListNode h1, LinkedListNode h2) {
+        LinkedListNode dummyNode = new LinkedListNode(null);
+        LinkedListNode tail = dummyNode;
+        while (true) {
+            if (h1 == null) {
+                tail.next = h2;
+                break;
+            }
+
+            if (h2 == null) {
+                tail.next = h1;
+                break;
+            }
+
+            if (h1.data <= h2.data) {
+                tail.next = h1;
+                h1 = h1.next;
+            } else {
+                tail.next = h2;
+                h2 = h2.next;
+            }
+            tail = tail.next;
+        }
+        return dummyNode;
     }
 
     private static void printAll(LinkedListNode head) {
