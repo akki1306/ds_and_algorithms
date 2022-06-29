@@ -45,7 +45,7 @@ public class LinkedListInsert {
         return head;
     }
 
-    static class LinkedListNode {
+    private static class LinkedListNode {
         public Integer data;
         public LinkedListNode next;
 
