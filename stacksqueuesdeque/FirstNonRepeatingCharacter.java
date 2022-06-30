@@ -18,20 +18,17 @@ public class FirstNonRepeatingCharacter {
 
         for (char ch : c) {
             map.put(ch, map.getOrDefault(ch, 0) + 1);
-            if (map.get(ch) == 1)
-                queue.add(ch);
+            queue.add(ch);
 
-            boolean isAdded = false;
             while (!queue.isEmpty()) {
                 if (map.get(queue.peek()) == 1) {
-                    isAdded = true;
                     result.add(queue.peek());
                     break;
                 } else {
                     queue.poll();
                 }
             }
-            if (!isAdded && queue.isEmpty())
+            if (queue.isEmpty())
                 result.add('0');
         }
         return result;
