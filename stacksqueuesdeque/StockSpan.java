@@ -13,16 +13,17 @@ public class StockSpan {
         Stack<Integer> s = new Stack<Integer>();
         ArrayList<Integer> ans = new ArrayList<Integer>();
         for (int i = 0; i < arr.length; i++) {
+            // remove all elements smaller than the current element
             while (!s.empty() && arr[s.peek()] <= arr[i])
                 s.pop();
 
             if (s.empty())
-                ans.add(i + 1);
+                ans.add(i + 1); // if stack empty then number of elements smaller than current element will be i + 1
             else {
                 int top = s.peek();
-                ans.add(i - top);
+                ans.add(i - top); // if stack is not empty then number of elements smaller than current element will be i + st.peek()
             }
-            s.push(i);
+            s.push(i); // push every index to the stack
         }
 
         return ans;
