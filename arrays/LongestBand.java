@@ -40,10 +40,7 @@ public class LongestBand {
             while (set.contains(v - 1)) {
                 cnt++;
                 max = Math.max(max, cnt);
-                if (set.contains(v - 2))
-                    --v;
-                else
-                    break;
+                --v;
             }
         }
         return max;

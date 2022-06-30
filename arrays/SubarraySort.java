@@ -30,12 +30,12 @@ public class SubarraySort {
         return new int[]{i, j};
     }
 
-    private static boolean isOutOfOrder(int[] arr, int index){
-        if(index == 0){
+    private static boolean isOutOfOrder(int[] arr, int index) {
+        if (index == 0) {
             return arr[1] < arr[index];
         }
 
-        if(index == arr.length - 1){
+        if (index == arr.length - 1) {
             return arr[index] < arr[index - 1];
         }
 
@@ -51,23 +51,23 @@ public class SubarraySort {
         int largest = Integer.MIN_VALUE;
 
         for (int i = 0; i < n; i++) {
-            if(isOutOfOrder(arr, i)){
+            if (isOutOfOrder(arr, i)) {
                 smallest = Math.min(smallest, arr[i]);
                 largest = Math.max(largest, arr[i]);
             }
         }
 
-        if(smallest == Integer.MAX_VALUE){
-            return new int[] {-1,-1};
+        if (smallest == Integer.MAX_VALUE) {
+            return new int[]{-1, -1};
         }
 
         int left = 0;
-        int right = n-1;
+        int right = n - 1;
 
-        while(smallest >= arr[left])
+        while (smallest >= arr[left])
             left++;
 
-        while(largest <= arr[right])
+        while (largest <= arr[right])
             right--;
 
         return new int[]{left, right};
