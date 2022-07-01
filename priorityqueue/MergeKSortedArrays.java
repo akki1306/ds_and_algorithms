@@ -7,7 +7,7 @@ import java.util.PriorityQueue;
 
 public class MergeKSortedArrays {
     public static void main(String[] args) {
-        System.out.println(mergeKArrays(new int[][]{{1, 3, 15}, {12, 13, 14, 16}, {0, 9, 10, 11}}, 3));
+        System.out.println(mergeKArrays(new int[][]{{10, 15, 20, 30}, {2, 5, 8, 14, 24}, {0, 11, 60, 90}}, 3));
     }
 
     private static List<Integer> mergeKArrays(int[][] kArr, int k) {
