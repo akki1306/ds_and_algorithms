@@ -12,7 +12,7 @@ public class LevelOrderPrint {
         levelOrderPrint(tree.buildTree(new int[]{1, 2, 4, -1, -1, 5, 7, -1, -1, -1, 3, -1, 6, -1, -1}));
     }
 
-    private static void levelOrderPrint(Node root) {
+    public static void levelOrderPrint(Node root) {
         Queue<Node> queue = new LinkedBlockingQueue<>();
         queue.add(root);
         Node nullNode = new Node(-999, null, null);
