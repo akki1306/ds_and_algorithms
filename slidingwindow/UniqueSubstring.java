@@ -70,7 +70,6 @@ public class UniqueSubstring {
                 maxWindowLen = windowLen;
                 start = i;
             }
-
         }
         return s.substring(start, start+ maxWindowLen);
     }

@@ -36,7 +36,7 @@ public class StringWindow {
                 // start contracting from the left to remove unwated characters
                 // unwated characters are either not present in the pattern or the frequency is higher then required.
 
-                while (c2Map[c1[start]] == 0 || c2Map[c1[start]] > c1Map[c1[start]]) {
+                while (c2Map[c1[start]] == 0 || c1Map[c1[start]] > c2Map[c1[start]]) {
                     c1Map[c1[start]]--;
                     start++;
                 }
