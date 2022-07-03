@@ -8,7 +8,7 @@ public class PrintLevelK {
         printLevelK(root, 2);
     }
 
-    private static void printLevelK(Node root, int level) {
+    public static void printLevelK(Node root, int level) {
         if (root == null)
             return;
 

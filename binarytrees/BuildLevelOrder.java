@@ -7,7 +7,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 public class BuildLevelOrder {
     public static void main(String[] args) {
-        Node root = buildLevelOrder(new int[]{1, 2, 3, 4, 5, -1, 6, -1, -1, 7, -1, -1, -1, -1, -1});
+    Node root = buildLevelOrder(new int[]{1, 2, 3, 4, 5, -1, 6, -1, -1, 7, -1, -1, -1, -1, -1});
         System.out.println();
     }
 
