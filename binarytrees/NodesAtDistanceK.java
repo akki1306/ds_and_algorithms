@@ -5,8 +5,8 @@ import binarytrees.ds.Node;
 public class NodesAtDistanceK {
     public static void main(String[] args) {
         Node root = BuildLevelOrder.buildLevelOrder(new int[]{1, 2, 3, 4, 5, -1, 6, -1, -1, 7, 8, -1, -1, -1, -1, 9, 10});
-        Node target = root.left.right;
-        nodesAtDistanceK(root, target, 4);
+        Node target = root.left.right.right;
+        nodesAtDistanceK(root, target, 3);
     }
 
     static void printAtLevelK(Node root, int k) {

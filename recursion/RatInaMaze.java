@@ -22,13 +22,13 @@ public class RatInaMaze {
             return true;
         }
 
-        if(i>=maze.length || j>=maze.length)
+        if (i >= maze.length || j >= maze.length)
             return false;
 
         if (maze[i][j] == 1)
             return false;
         else {
-            res.add(maze.length*i + j + 1);
+            res.add(maze.length * i + j + 1);
             boolean isPossible = ratPath(maze, i + 1, j, res) || ratPath(maze, i, j + 1, res);
             if (!isPossible)
                 res.remove(maze[i][j]);
