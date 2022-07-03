@@ -12,7 +12,7 @@ public class BuildLevelOrder {
     }
 
     // 1 2 3 4 5 -1 6 -1 -1 7 -1 -1 -1 -1 -1
-    private static Node buildLevelOrder(int[] arr) {
+    public static Node buildLevelOrder(int[] arr) {
         Queue<Node> queue = new LinkedBlockingQueue<>();
 
         Node root = new Node(arr[0], null, null);

@@ -15,7 +15,8 @@ import binarytrees.ds.Tree;
 public class HeightBalancedTree {
     public static void main(String[] args) {
         Tree tree = new Tree();
-        Node root = tree.buildTree(new int[]{1, 2, 4, -1, -1, 5, 7, -1, -1, -1, 3, -1, 6, -1, -1});
+        Node root = BuildLevelOrder.buildLevelOrder(new int[]{1,2,3,4,5,-1,6,-1,-1,7,8,-1,-1,-1,-1});
+        //Node root = tree.buildTree(new int[]{1, 2, 4, -1, -1, 5, 7, -1, -1, -1, 3, -1, 6, -1, -1});
         System.out.println(heightBalanced(root));
     }
 
@@ -23,15 +24,14 @@ public class HeightBalancedTree {
         if (node == null)
             return new HBPair(0, true);
 
-        if (node.left == null && node.right == null)
-            return new HBPair(0, true);
-
         HBPair leftPair = heightBalanced(node.left);
         HBPair rightPair = heightBalanced(node.right);
         int height = 1 + Math.max(leftPair.height, rightPair.height);
         int diff = Math.abs(leftPair.height - rightPair.height);
-        return new HBPair(height, leftPair.isBalanced
+        if(leftPair.isBalanced && rightPair.isBalanced && diff <= 1)
+            return new HBPair(height, leftPair.isBalanced
                 && rightPair.isBalanced && diff <= 1);
+        return new HBPair(height, false);
     }
 
     static class HBPair {
