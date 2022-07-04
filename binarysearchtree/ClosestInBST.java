@@ -6,7 +6,7 @@ public class ClosestInBST {
     public static void main(String[] args) {
         Node root = BSTCreation.createBinarySearchTree(new int[]{8, 3, 10, 1, 6, 14, 4, 7, 13});
         System.out.println(closestInBST(root, 16));
-        System.out.println(closestInBSTIterative(root, 16));
+        System.out.println(closestInBSTIterative(root, 0));
     }
 
     private static int closestInBST(Node root, int key) {
@@ -21,14 +21,25 @@ public class ClosestInBST {
     }
 
     private static int closestInBSTIterative(Node root, int key) {
-        int max = Integer.MIN_VALUE;
-        while (root != null) {
-            max = Math.max(root.val, max);
-            if (key < root.val)
-                root = root.left;
+        int currentDiff;
+        int diff = Integer.MAX_VALUE;
+        Node temp = root;
+        int closest = -1;
+        while (temp != null) {
+            currentDiff = Math.abs(temp.val - key);
+            if (currentDiff == 0)
+                return temp.val;
+
+            if (currentDiff < diff) {
+                diff = currentDiff;
+                closest = temp.val;
+            }
+
+            if (temp.val < key)
+                temp = temp.right;
             else
-                root = root.right;
+                temp = temp.left;
         }
-        return max;
+        return closest;
     }
 }
