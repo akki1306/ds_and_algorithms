@@ -20,7 +20,7 @@ public class LowestCommonAncestor {
         System.out.println("LCA is " + lca.val);
     }
 
-    private static Node lowestCommonAncestor(Node root, int a, int b) {
+    public static Node lowestCommonAncestor(Node root, int a, int b) {
         if (root == null)
             return null;
 
