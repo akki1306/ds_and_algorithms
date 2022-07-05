@@ -23,10 +23,12 @@ public class InorderSuccessorBST {
                     max = root.val;
                     maxNode = root;
                 }
-                if (target.val <= root.val) {
+                if (target.val < root.val) {
                     root = root.left;
-                } else {
+                } else if (target.val > root.val) {
                     root = root.right;
+                } else {
+                    break; // important to avoid full unnecessary traversal of tree, just break as soon as you reach target node and return the last node with largest value greater than target node
                 }
             }
 
