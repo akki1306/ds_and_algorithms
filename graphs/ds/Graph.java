@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Graph {
-    int v;
-    List<List<Integer>> l;
+    public int v;
+    public List<List<Integer>> l;
 
     public Graph(int v) {
         this.v = v;
