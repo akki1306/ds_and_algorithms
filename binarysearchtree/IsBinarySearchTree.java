@@ -12,8 +12,6 @@ public class IsBinarySearchTree {
         // binary tree
         root = BuildLevelOrder.buildLevelOrder(new int[]{4, 2, 6, 1, 3, 5, 7});
         System.out.println(isBinarySearchTree(root));
-        //Node root = BSTCreation.createBinarySearchTree(new int[]{8, 3, 10, 1, 6, 14, 4, 7, 13});
-        //System.out.println(isBinarySearchTree(root));
     }
 
 
