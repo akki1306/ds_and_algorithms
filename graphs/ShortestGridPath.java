@@ -16,63 +16,84 @@ public class ShortestGridPath {
 
     private static int shortest_path(int[][] grid) {
         int[][] dist = new int[grid.length][grid[0].length];
-        TreeMap<Integer, Cell> map = new TreeMap<>();
+        TreeSet<Node> set = new TreeSet<>(new NodeComparator());
 
         for (int i = 0; i < dist.length; i++)
             Arrays.fill(dist[i], Integer.MAX_VALUE);
 
         dist[0][0] = grid[0][0];
-        map.put(dist[0][0], new Cell(0, 0));
+        set.add(new Node(0, 0, dist[0][0]));
 
-        while (!map.isEmpty()) {
-            Map.Entry<Integer, Cell> e = map.pollFirstEntry();
-            Cell c = e.getValue();
-            List<Cell> neighbours = new ArrayList<>();
-            if (c.r + 1 < grid.length)
-                neighbours.add(new Cell(c.r + 1, c.c));
-            if (c.c + 1 < grid[0].length)
-                neighbours.add(new Cell(c.r, c.c + 1));
-            if (c.r - 1 >= 0)
-                neighbours.add(new Cell(c.r - 1, c.c));
-            if (c.c - 1 >= 0)
-                neighbours.add(new Cell(c.r, c.c - 1));
+        while (!set.isEmpty()) {
+            Node c = set.pollFirst();
+            List<Node> neighbours = new ArrayList<>();
+            int nx, ny;
+            if (c.r + 1 < grid.length) {
+                nx = c.r + 1;
+                ny = c.c;
+                neighbours.add(new Node(nx, ny, dist[nx][ny]));
+            }
+            if (c.c + 1 < grid[0].length) {
+                nx = c.r;
+                ny = c.c + 1;
+                neighbours.add(new Node(nx, ny, dist[nx][ny]));
+            }
+            if (c.r - 1 >= 0) {
+                nx = c.r - 1;
+                ny = c.c;
+                neighbours.add(new Node(nx, ny, dist[nx][ny]));
+            }
+            if (c.c - 1 >= 0) {
+                nx = c.r;
+                ny = c.c - 1;
+                neighbours.add(new Node(nx, ny, dist[nx][ny]));
+            }
 
             for (int i = 0; i < neighbours.size(); i++) {
-                Cell nbr = neighbours.get(i);
-                if (dist[c.r][c.c] + grid[nbr.r][nbr.c] < dist[nbr.r][nbr.c]) {
-                    List<Map.Entry<Integer, Cell>> entries = map.entrySet().stream().filter(en -> en.getValue() == nbr).collect(Collectors.toList());
+                Node nbr = neighbours.get(i);
+                if ((dist[c.r][c.c] + grid[nbr.r][nbr.c]) < dist[nbr.r][nbr.c]) {
+                    List<Node> entries = set.stream().filter(en -> en.equals(nbr)).collect(Collectors.toList());
                     if (entries != null && !entries.isEmpty())
-                        map.remove(entries.get(0).getKey());
+                        set.remove(entries.get(0));
 
                     dist[nbr.r][nbr.c] = dist[c.r][c.c] + grid[nbr.r][nbr.c];
-                    map.put(dist[nbr.r][nbr.c], new Cell(nbr.r, nbr.c));
+                    set.add(new Node(nbr.r, nbr.c, dist[nbr.r][nbr.c]));
                 }
             }
         }
-        dist[dist.length - 1][dist[0].length - 1] = grid[grid.length-1][grid.length-1] + Math.min(dist[dist.length-1][dist[0].length-2], dist[dist.length-2][dist.length-1]);
+//        dist[dist.length - 1][dist[0].length - 1] = grid[grid.length - 1][grid.length - 1] + Math.min(dist[dist.length - 1][dist[0].length - 2], dist[dist.length - 2][dist.length - 1]);
         return dist[dist.length - 1][dist[0].length - 1];
     }
 
-    static class Cell {
+    static class NodeComparator implements Comparator<Node> {
+        @Override
+        public int compare(Node o1, Node o2) {
+            return Integer.compare(o1.dist, o2.dist);
+        }
+    }
+
+    static class Node {
         public int r;
         public int c;
+        public int dist;
 
-        public Cell(int r, int c) {
+        public Node(int r, int c, int dist) {
             this.c = c;
             this.r = r;
+            this.dist = dist;
         }
 
         @Override
         public boolean equals(Object o) {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
-            Cell cell = (Cell) o;
-            return r == cell.r && c == cell.c;
+            Node cell = (Node) o;
+            return r == cell.r && c == cell.c && dist == cell.dist;
         }
 
         @Override
         public int hashCode() {
-            return Objects.hash(r, c);
+            return Objects.hash(r, c, dist);
         }
 
         @Override
@@ -80,7 +101,7 @@ public class ShortestGridPath {
             return "Cell{" +
                     "r=" + r +
                     ", c=" + c +
-                    '}';
+                    ", dist=" + dist + "'}'";
         }
     }
 }
