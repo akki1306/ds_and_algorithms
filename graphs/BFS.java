@@ -20,7 +20,7 @@ public class BFS {
         bfs(1, g);
     }
 
-    private static void bfs(int source, Graph g) {
+    public static void bfs(int source, Graph g) {
         Queue<Integer> q = new ArrayBlockingQueue(7);
         boolean[] visited = new boolean[7];
         q.add(source);
