@@ -14,7 +14,10 @@ public class Trie {
         for (int i = 0; i < arr.length; i++) {
             char l = arr[i];
             int finalI = i;
+            Node prev = current;
             current = current.children.computeIfAbsent(l, c -> new Node(finalI == arr.length - 1));
+            if (finalI == arr.length - 1)
+                prev.children.get(l).isTerminal = true;
         }
     }
 
