@@ -1,7 +1,7 @@
 package triesandpatternmatching.ds;
 
 public class Trie {
-    Node root;
+    public Node root;
 
     public Trie() {
         root = new Node(false);
