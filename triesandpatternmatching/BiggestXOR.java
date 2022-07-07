@@ -1,8 +1,5 @@
 package triesandpatternmatching;
 
-import triesandpatternmatching.ds.Node;
-import triesandpatternmatching.ds.Trie;
-
 public class BiggestXOR {
     public static void main(String[] args) {
         biggestXOR(new int[]{3, 10, 5, 8, 2, 25});
@@ -13,32 +10,63 @@ public class BiggestXOR {
         int max = Integer.MIN_VALUE;
 
         for (int i = 1; i < arr.length; i++) {
-            String prevNum = String.format("%08d", Integer.valueOf(Integer.toBinaryString(arr[i - 1])));
-            String currNum = String.format("%08d", Integer.valueOf(Integer.toBinaryString(arr[i])));
-            t.insert(prevNum);
-            max = Math.max(Integer.parseInt(searchMaximum(t, currNum), 2) ^ arr[i], max);
+            t.insert(arr[i - 1]);
+            max = Math.max(t.searchMaximum(t, arr[i]), max);
         }
         System.out.println(max);
     }
 
-    private static String searchMaximum(Trie t, String numBinary) {
-        char[] bts = numBinary.toCharArray();
-        Node temp = t.root;
-        String s = "";
-        char c;
-        for (char ch : bts) {
-            if (ch == '1' && temp.children.containsKey('0')) {
-                c = '0';
-                temp = temp.children.get('0');
-            } else if (ch == '0' && temp.children.containsKey('1')) {
-                c = '1';
-                temp = temp.children.get('1');
-            } else {
-                c = ch;
-                temp = temp.children.get(ch);
-            }
-            s += c;
+
+    private static class Node {
+        Node left;
+        Node right;
+    }
+
+    private static class Trie {
+        BiggestXOR.Node root;
+
+        Trie() {
+            root = new Node();
         }
-        return s;
+
+        void insert(int s) {
+            Node temp = root;
+            for (int i = 31; i >= 0; i--) {
+                int b = (s >> i) & 1;
+                if (b == 0) {
+                    if (temp.left == null)
+                        temp.left = new Node();
+                    temp = temp.left;
+                } else {
+                    if (temp.right == null)
+                        temp.right = new Node();
+                    temp = temp.right;
+                }
+            }
+        }
+
+        private static int searchMaximum(Trie t, int numBinary) {
+            BiggestXOR.Node temp = t.root;
+            int ans = 0;
+            for (int i = 31; i >= 0; i--) {
+                int numBit = (numBinary >> i) & 1;
+                if (numBit == 1) {
+                    if (temp.left != null) {
+                        ans += (1 << i);
+                        temp = temp.left;
+                    } else {
+                        temp = temp.right;
+                    }
+                } else {
+                    if (temp.right != null) {
+                        ans += (1 << i);
+                        temp = temp.right;
+                    } else {
+                        temp = temp.left;
+                    }
+                }
+            }
+            return ans;
+        }
     }
 }
