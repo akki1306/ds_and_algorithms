@@ -16,9 +16,12 @@ public class Trie {
             int finalI = i;
             Node prev = current;
             current = current.children.computeIfAbsent(l, c -> new Node(finalI == arr.length - 1));
-            if (finalI == arr.length - 1)
+            if (finalI == arr.length - 1) {
                 prev.children.get(l).isTerminal = true;
+                prev.children.get(l).word = s;
+            }
         }
+
     }
 
     public boolean search(String s) {
