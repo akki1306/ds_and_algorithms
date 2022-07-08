@@ -1,5 +1,8 @@
 package hashing;
 
+import hashing.ds.Point;
+import hashing.ds.PointComparator;
+
 import java.util.*;
 
 public class CountRectangles {
@@ -24,7 +27,7 @@ public class CountRectangles {
 
         // 2. Brute force logic for two points. For other two lookup
         int ans = 0;
-        for (int i = 0; i <= points.size() - 2; i++) {
+        for (int i = 0; i <= points.size() - 1; i++) {
             for (int j = i + 1; j <= points.size() - 1; j++) {
                 Point p1 = points.get(i);
                 Point p2 = points.get(j);
@@ -45,40 +48,7 @@ public class CountRectangles {
         return ans / 2;
     }
 
-    static class Point {
-        public int x;
-        public int y;
 
 
-        public Point() {
 
-        }
-
-        public Point(int x, int y) {
-            this.x = x;
-            this.y = y;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            Point that = (Point) o;
-            return x == that.x && y == that.y;
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(x, y);
-        }
-    }
-
-    static class PointComparator implements Comparator<Point> {
-        @Override
-        public int compare(Point o1, Point o2) {
-            if (o1.x == o2.x)
-                return Integer.compare(o1.y, o2.y);
-            return Integer.compare(o1.x, o2.x);
-        }
-    }
 }
