@@ -8,7 +8,7 @@ public class CoinChangeProblem {
         int[] cache = new int[15];
         Arrays.fill(cache, -1);
         System.out.println(coinChangeMemoization(15, new int[]{1, 3, 7, 10}, cache));
-        System.out.println(coinChangeDp(15, new int[]{1,3,7,10}));
+        System.out.println(coinChangeDp(15, new int[]{1, 3, 7, 10}));
     }
 
     private static int coinChange(int M, int[] coins) {
@@ -66,21 +66,22 @@ public class CoinChangeProblem {
 
         dp[0] = 0;
 
+        int numCoins;
         for (int i = 1; i < dp.length; i++) {
-            int numCoins = 0;
             int min = Integer.MAX_VALUE;
             for (int j = 0; j < coins.length; j++) {
+                numCoins = 0;
                 if (coins[j] > i)
                     continue;
-                int remainingAmount = coins[j] - i;
+                int remainingAmount = i - coins[j];
                 if (remainingAmount >= 0) {
                     numCoins++;
                     numCoins = numCoins + dp[remainingAmount];
                     min = Math.min(numCoins, min);
-                    dp[i] = min;
                 }
 
             }
+            dp[i] = min;
         }
         return dp[M];
     }
