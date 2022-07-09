@@ -18,7 +18,6 @@ public class BreakTheChain {
             prev = temp;
             temp = temp.next;
         }
-        System.out.println("111");
     }
 
     private static Node createLinkedList(int[] arr) {
