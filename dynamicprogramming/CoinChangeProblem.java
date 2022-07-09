@@ -22,13 +22,10 @@ public class CoinChangeProblem {
         for (int i = coins.length - 1; i >= 0; i--) {
             if (coins[i] > M)
                 continue;
-            int numCoins = 0;
             int remainingAmount = M - coins[i];
             if (remainingAmount >= 0) {
-                numCoins++;
                 int remainingAmtCount = coinChange(remainingAmount, coins);
-                numCoins = numCoins + remainingAmtCount;
-                min = Math.min(numCoins, min);
+                min = Math.min(1+ remainingAmtCount, min);
             }
         }
         return min;
@@ -48,13 +45,10 @@ public class CoinChangeProblem {
         for (int i = coins.length - 1; i >= 0; i--) {
             if (coins[i] > M)
                 continue;
-            int numCoins = 0;
             int remainingAmount = M - coins[i];
             if (remainingAmount >= 0) {
-                numCoins++;
                 int remainingAmtCount = coinChangeMemoization(remainingAmount, coins, cache);
-                numCoins = numCoins + remainingAmtCount;
-                min = Math.min(numCoins, min);
+                min = Math.min(1 + remainingAmtCount, min);
             }
         }
         cache[M - 1] = min;
@@ -66,18 +60,14 @@ public class CoinChangeProblem {
 
         dp[0] = 0;
 
-        int numCoins;
         for (int i = 1; i < dp.length; i++) {
             int min = Integer.MAX_VALUE;
             for (int j = 0; j < coins.length; j++) {
-                numCoins = 0;
                 if (coins[j] > i)
                     continue;
                 int remainingAmount = i - coins[j];
                 if (remainingAmount >= 0) {
-                    numCoins++;
-                    numCoins = numCoins + dp[remainingAmount];
-                    min = Math.min(numCoins, min);
+                    min = Math.min(1 + dp[remainingAmount], min);
                 }
 
             }
