@@ -8,7 +8,7 @@ public class CoinChangeProblem {
         int[] cache = new int[15];
         Arrays.fill(cache, -1);
         System.out.println(coinChangeMemoization(15, new int[]{1, 3, 7, 10}, cache));
-        System.out.println(coinChangeDp(15, new int[]{1, 3, 7, 10}));
+        System.out.println(coinChangeDp(6, new int[]{5, 7, 10}));
     }
 
     private static int coinChange(int M, int[] coins) {
@@ -25,7 +25,7 @@ public class CoinChangeProblem {
             int remainingAmount = M - coins[i];
             if (remainingAmount >= 0) {
                 int remainingAmtCount = coinChange(remainingAmount, coins);
-                min = Math.min(1+ remainingAmtCount, min);
+                min = Math.min(1 + remainingAmtCount, min);
             }
         }
         return min;
@@ -61,19 +61,18 @@ public class CoinChangeProblem {
         dp[0] = 0;
 
         for (int i = 1; i < dp.length; i++) {
-            int min = Integer.MAX_VALUE;
+            dp[i] = Integer.MAX_VALUE;
             for (int j = 0; j < coins.length; j++) {
                 if (coins[j] > i)
                     continue;
                 int remainingAmount = i - coins[j];
-                if (remainingAmount >= 0) {
-                    min = Math.min(1 + dp[remainingAmount], min);
+                if (remainingAmount >= 0 && dp[remainingAmount]!=Integer.MAX_VALUE) {
+                    dp[i] = Math.min(1 + dp[remainingAmount], dp[i]);
                 }
 
             }
-            dp[i] = min;
         }
-        return dp[M];
+        return dp[M] == Integer.MAX_VALUE ? -1 : dp[M];
     }
 
 }
