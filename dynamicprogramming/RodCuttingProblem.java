@@ -8,7 +8,7 @@ public class RodCuttingProblem {
         int[] cache = new int[8];
         Arrays.fill(cache, -1);
         System.out.println(rodCuttingProblemRecursiveMemoization(new int[]{1, 5, 8, 9, 10, 17, 17, 20}, 8, cache));
-        System.out.println(rodCuttingProblemDp(new int[]{1, 5, 8, 9, 10, 17, 17, 20}, 8));
+        System.out.println(rodCuttingProblemDp(new int[]{3, 5, 8, 9, 10, 17, 17, 20}, 8));
     }
 
     private static int rodCuttingProblemRecursive(int[] price, int N) {
