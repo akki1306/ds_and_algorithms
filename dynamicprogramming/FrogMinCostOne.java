@@ -7,10 +7,14 @@ public class FrogMinCostOne {
     }
 
     private static int frogMinCostRecursive(int[] arr, int i) {
-        if (i <= 0)
+        if (i == 0)
             return 0;
+        if (i == 1)
+            return Math.abs(arr[0] - arr[1]);
 
-        return Math.min(Math.abs(arr[i] - frogMinCostRecursive(arr, i - 1)), Math.abs(arr[i] - frogMinCostRecursive(arr, i - 2)));
+        int minPrev = frogMinCostRecursive(arr, i - 1);
+        int minPrevPrev = frogMinCostRecursive(arr, i - 2);
+        return Math.min(Math.abs(arr[i] - arr[i - 1]) + minPrev, Math.abs(arr[i] - arr[i - 2]) + minPrevPrev);
     }
 
     private static int frogMinCostDp(int[] arr) {
@@ -18,7 +22,7 @@ public class FrogMinCostOne {
         dp[0] = 0;
         dp[1] = Math.abs(arr[1] - arr[0]);
         for (int i = 2; i < dp.length; i++) {
-            dp[i] = Math.min(Math.abs(arr[i] - arr[i - 1]) + dp[i - 1], Math.abs(arr[i] - arr[i - 2]) + dp[i-2]);
+            dp[i] = Math.min(Math.abs(arr[i] - arr[i - 1]) + dp[i - 1], Math.abs(arr[i] - arr[i - 2]) + dp[i - 2]);
         }
         return dp[arr.length - 1];
     }

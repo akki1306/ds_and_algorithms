@@ -1,5 +1,7 @@
 package dynamicprogramming;
 
+import java.util.Arrays;
+
 public class LongestIncreasingSubsequence {
     public static void main(String[] args) {
         System.out.println(longestIncreasingSubsequenceDp(new int[]{50, 4, 10, 8, 30, 100}));
@@ -9,16 +11,17 @@ public class LongestIncreasingSubsequence {
     private static int longestIncreasingSubsequenceDp(int[] arr) {
         int[] dp = new int[arr.length];
 
-        dp[0] = 1;
+        Arrays.fill(dp,1);
         int lis = 1;
         for (int i = 1; i < arr.length; i++) {
             for (int j = 0; j < i; j++) {
-                if (arr[j] < arr[i])
-                    lis = Math.max(1 + dp[j], lis);
+                if (arr[j] < arr[i]) {
+                    dp[i] = Math.max(1 + dp[j], dp[i]);
+                    lis = Math.max(lis, dp[i]);
+                }
             }
-            dp[i] = lis;
         }
-        return dp[arr.length - 1];
+        return lis;
     }
 
     private static int longestIncreasingSubsequenceRecursion(int[] arr, int index) {
