@@ -1,4 +1,4 @@
-package dynamicprogramming;
+package dynamicprogramming1D;
 
 public class FrogMinCostOne {
     public static void main(String[] args) {

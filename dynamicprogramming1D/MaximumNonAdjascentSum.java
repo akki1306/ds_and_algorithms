@@ -1,4 +1,4 @@
-package dynamicprogramming;
+package dynamicprogramming1D;
 
 /**
  * Given an array of positive integers, find the maximum sum of
