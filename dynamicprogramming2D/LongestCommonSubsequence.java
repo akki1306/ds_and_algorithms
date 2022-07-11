@@ -65,22 +65,22 @@ public class LongestCommonSubsequence {
 
 
         // print the LCS by backtracking
-        String lcs = "";
+        StringBuilder lcs = new StringBuilder();
         for (int i = s1.length(); i > 0; ) {
             for (int j = s2.length(); i > 0; ) {
-                if (s1.charAt(i - 1) == s2.charAt(j - 1)) {
-                    lcs += s1.charAt(i - 1);
-                    i--;
+                if (dp[i][j] == dp[i][j - 1]) {
                     j--;
-                } else if (dp[i - 1][j] > dp[i][j - 1]) {
+                } else if (dp[i - 1][j] == dp[i][j]) {
                     i--;
-                } else if (dp[i][j - 1] >= dp[i - 1][j]) {
+                } else {
+                    lcs.append(s1.charAt(i - 1));
+                    i--;
                     j--;
                 }
             }
         }
 
-        System.out.println(lcs);
+        System.out.println(lcs.reverse());
         return dp[s1.length()][s2.length()];
     }
 }
