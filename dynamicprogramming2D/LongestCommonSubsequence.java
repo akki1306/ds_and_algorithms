@@ -69,15 +69,13 @@ public class LongestCommonSubsequence {
         for (int i = s1.length(); i > 0; ) {
             for (int j = s2.length(); i > 0; ) {
                 if (s1.charAt(i - 1) == s2.charAt(j - 1)) {
-                    lcs += s1.charAt(i-1);
+                    lcs += s1.charAt(i - 1);
                     i--;
                     j--;
                 } else if (dp[i - 1][j] > dp[i][j - 1]) {
                     i--;
                 } else if (dp[i][j - 1] >= dp[i - 1][j]) {
                     j--;
-                } else {
-
                 }
             }
         }
