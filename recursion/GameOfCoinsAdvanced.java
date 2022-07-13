@@ -22,7 +22,7 @@ public class GameOfCoinsAdvanced {
             int ans = sum(v, s, s + fpi) + sum(v, e - totalChances + fpi + 1, e + 1);
             int op = Integer.MAX_VALUE;
             for (int spi = 0; spi <= totalChances; spi++) {
-                // e - (totalChances - fpi - (totalChances - spi))
+                // e - ((totalChances - fpi) + (totalChances - spi)))
                 op = Math.min(op, gameOfCoins(v, s + fpi + spi, e - totalChances + fpi - totalChances + spi, totalChances));
             }
             res = Math.max(res, ans + op);
