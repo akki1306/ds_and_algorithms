@@ -2,6 +2,18 @@ package arrays;
 
 import java.util.Arrays;
 
+/**
+ * Implement a function that takes in two non empty array of integers, find the pair of numbers(one from each array)
+ * whose absolute difference is closest to zero, and returns a pair conaining these two numbers, with the first number
+ * from array. Only one such pair will exist for the test.
+ *
+ * Input:
+ * Array1: {23,5,10,17,30}
+ * Array2: {26,134,135,14,19}
+ *
+ * Output:
+ * [17,19]
+ */
 public class MinimumDifference {
     public static void main(String[] args) {
         System.out.println(Arrays.toString(minimumDifference(new int[]{23, 5, 10, 17, 30}, new int[]{26, 134, 135, 14, 19})));

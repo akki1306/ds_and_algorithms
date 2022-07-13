@@ -4,6 +4,17 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Given an array of size N, find the minimum number of swaps needed
+ * to make the array as sorted.
+ *
+ * Sample Input:
+ * a1 = [5,4,3,2,1]
+ *
+ * Sample Output:
+ *
+ * 2
+ */
 public class MinimumSwaps {
     public static void main(String[] args) {
         System.out.println(minimumNumberOfSwapsToSort(new int[]{2, 4, 5, 1, 3}));

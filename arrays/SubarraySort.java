@@ -2,6 +2,22 @@ package arrays;
 
 import java.util.Arrays;
 
+/**
+ * Given an array of size at-least two, find the smallest sub-array
+ * that needs to be sorted in place so that the entire input array becomes
+ * sorted.
+ *
+ * if the input array is already sorted, the function should return [-1,-1],
+ * otherwise return the start & index of the smallest subarray.
+ *
+ * Sample input:
+ *
+ * a1 = [1,2,3,4,5,8,6,7,9,10,11]
+ *
+ * Sample output:
+ *
+ * [5,7]
+ */
 public class SubarraySort {
     public static void main(String[] args) {
         System.out.println(Arrays.toString(findSubArraySortIndicesSorting(new int[]{1, 2, 3, 4, 5, 8, 6, 7, 9, 10})));

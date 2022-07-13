@@ -2,6 +2,23 @@ package arrays;
 
 import java.util.Arrays;
 
+/**
+ * Implement a function that takes a vector of integers, and returns a vector of the same length,
+ * where each element of the array is equal to the product of every number in the input array.
+ * Solve this problem without using division.
+ *
+ * In other words, the value at output[i] is equal to the product of every number in the input
+ * array other that input[i]. You can assum that answer can be stored inside int datatype
+ * and no overflow will occur due to products.
+ *
+ * Sample Input:
+ *
+ * Input:
+ * {1,2,3,4,5}
+ *
+ * Output:
+ * {120,60,40,30,24}
+ */
 public class ArrayProducts {
     public static void main(String[] args) {
         System.out.println(Arrays.toString(arrayProductQuadratic(new int[]{1, 2, 3, 4, 5})));

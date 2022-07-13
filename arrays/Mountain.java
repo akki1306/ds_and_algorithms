@@ -1,5 +1,14 @@
 package arrays;
 
+/**
+ * Write a function that takes input an array of distinct integers
+ * and returns the length of the highest mountain
+ *
+ * . A mountain is defined as adjascent integers that are strictly
+ *   increasing until they reach a peak at which they become strictly
+ *   decreasing.
+ * . At least 3 numbers are required to form a mountain.
+ */
 public class Mountain {
     public static void main(String[] args) {
         int[] input = new int[]{5, 6, 1, 2, 3, 4, 5, 4, 3, 2, 0, 1, 2, 3, -2, 4};

@@ -1,5 +1,14 @@
 package arrays;
 
+/**
+ * Implement a function that takes an input vector of integers, and prints the maximum subarray sum
+ * that can be formed. A sub array is is defined as consecutive segment of the array. If all numbers
+ * are negative then return zero.
+ * <p>
+ * Input:
+ * <p>
+ * {-1,2,3,4,-2,6,-8,3}
+ */
 public class MaximumSubArraySum {
     public static void main(String[] args) {
         System.out.println(maximumSubArraySum(new int[]{-1, 2, 3, 4, -2, 6, -8, 3}));
@@ -8,21 +17,13 @@ public class MaximumSubArraySum {
     // time complexity - O(N)
     // space complexity - O(N)
     private static int maximumSubArraySum(int[] arr) {
-        int n = arr.length;
-        int[] prefixSum = new int[n];
-
-        // calculate prefix sum
-        prefixSum[0] = arr[0];
-        for (int i = 1; i < n; i++)
-            prefixSum[i] = arr[i] + prefixSum[i - 1];
-
+        int sum = 0;
         int max = Integer.MIN_VALUE;
-        int minPrefixSum = 0;
-        for (int i = 0; i < n; i++) {
-            max = Math.max(max, prefixSum[i] - minPrefixSum);
-            minPrefixSum = Math.min(minPrefixSum, prefixSum[i]);
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+            max = Math.max(sum, max);
+            sum = Math.max(sum, 0);
         }
-
-        return max == Integer.MIN_VALUE ? 0 : max;
+        return max;
     }
 }
