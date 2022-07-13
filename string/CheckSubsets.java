@@ -1,5 +1,17 @@
 package string;
 
+/**
+ * Given two non-empty strings, write a function that determines whether
+ * the second string is a subsequence of the first one.
+ *
+ * Sample Input:
+ *
+ * codingminutes
+ * cines
+ *
+ * Sample Output:
+ * Yes
+ */
 public class CheckSubsets {
     public static void main(String[] args) {
         System.out.println(checkSubsets("codingminutes", "cines"));

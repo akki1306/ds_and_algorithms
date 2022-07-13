@@ -1,5 +1,12 @@
 package string;
 
+/**
+ * Given a palindromic string of lowercase English letters palindrome, replace exactly one
+ * character with any lowercase letter so that the resulting string is not a palindrome and
+ * that is lexicographically smallest one possible.
+ *
+ * Return the result string. If there is no way to replace a character to make it not
+ */
 public class PalindromeBreak {
     public static void main(String[] args) {
         System.out.println(breakPalindrome("abccba"));

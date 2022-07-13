@@ -1,5 +1,16 @@
 package string;
 
+/**
+ *  Given a string, write a function to replace all spaces in a string
+ *  with '%20'. It is given that the string has sufficient space at the end to
+ *  hold the additional characters.
+ *
+ *  Sample Input:
+ *  hello world, how are you?
+ *
+ *  Sample Output:
+ *  hello%20world,%20how%20are%20you?
+ */
 public class Space20 {
     public static void main(String[] args) {
         System.out.println(space20("this is a test"));
