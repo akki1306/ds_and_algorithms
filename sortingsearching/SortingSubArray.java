@@ -2,6 +2,25 @@ package sortingsearching;
 
 import java.util.Arrays;
 
+/**
+ * Write a function that takes in an array and returns two integers, denoting starting and ending
+ * indices of the smallest sub array in the input array that needs to be sorted in place so that
+ * the entire input is sorted.
+ *
+ * If the input array is already sorted, then return {-1,-1}
+ *
+ * Sample Input:
+ *
+ * [0,2,4,7,10,11,7,12,13,14,16,19,29]
+ *
+ * Sample Output:
+ *
+ * [4,6]
+ *
+ * Explanation:
+ *
+ * If we sort the subarray[10,11,7] then entire array becomes sorted.
+ */
 public class SortingSubArray {
     public static void main(String[] args) {
         System.out.println(Arrays.toString(sortingSubArray(new int[]{0, 2, 4, 7, 10, 11, 7, 12, 13, 14, 16, 17, 29})));
