@@ -3,7 +3,7 @@ package bitmanipulation;
 public class BitManipulation {
     public static void main(String[] args) {
         int i = 8;
-        System.out.println(~i);
+        /*System.out.println(~i);
         System.out.println(3 & 7);
         System.out.println(3 ^ 7);
         System.out.println(5 << 10);
@@ -13,7 +13,8 @@ public class BitManipulation {
         System.out.println(setithBit(3, 3));
         System.out.println(clearithBit(13, 2));
         System.out.println(updateithBit(13, 1, 1));
-        System.out.println(clearLastiBits(15, 2));
+        System.out.println(clearLastiBits(15, 2));*/
+        System.out.println(earthLevels(7));
     }
 
     private static int getithBit(int n, int i) {
@@ -46,7 +47,36 @@ public class BitManipulation {
         return n & mask;
     }
 
-    private static void replaceBitsInNByM(int N, int M, int i, int j) {
+    private static int replaceBitsInNByM(int N, int M, int i, int j) {
+        int a = (-1) << j + 1;
+        int b = M << i;
+        int m = a | b;
+        return N & m;
+    }
 
+    private static boolean twoPower() {
+        return false;
+    }
+
+    private static int earthLevels(int n) {
+        int s = 1;
+        int cnt = 0;
+        while (s < n) {
+            if (s << 1 > n) {
+                break;
+            } else {
+                s <<= 1;
+                cnt++;
+            }
+        }
+
+        int i = n - s;
+        while (s < n) {
+            s = s | i;
+            cnt++;
+            i--;
+        }
+
+        return cnt;
     }
 }

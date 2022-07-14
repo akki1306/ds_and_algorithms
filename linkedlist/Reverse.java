@@ -1,5 +1,18 @@
 package linkedlist;
 
+/**
+ * LinkedList reverse
+ *
+ * Given a linked list, write a function to reverse the linked list
+ *
+ * Input:
+ *
+ * 1 => 2 => 3 => 4 => 5
+ *
+ * Output:
+ *
+ * 5 => 4 => 3 => 2 => 1
+ */
 public class Reverse {
     public static void main(String[] args) {
         LinkedListNode head = new LinkedListNode(null);
@@ -25,6 +38,7 @@ public class Reverse {
     }
 
     private static LinkedListNode recursiveReverseLinkedList(LinkedListNode head) {
+        // if you are passed linked list with a null head or you are at the second last element in the linked list.
         if (head == null || head.next == null)
             return head;
 

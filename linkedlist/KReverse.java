@@ -1,5 +1,20 @@
 package linkedlist;
 
+/**
+ * K-Reverse
+ *
+ * Given a linked list, write a function to reverse every k nodes (where k is an input
+ * to the function).
+ *
+ * Input:
+ *
+ * 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> NULL
+ * K=3
+ *
+ * Output:
+ * 3 -> 2 -> 1 -> 6 -> 5 -> 4 -> 8 -> 7 -> NULL
+ *
+ */
 public class KReverse {
     public static void main(String[] args) {
         LinkedListNode head = new LinkedListNode(null);
@@ -10,7 +25,7 @@ public class KReverse {
         head = insertAtHead(head, 1);
         printAll(head);
         head = iterativeKReverseLinkedList(head, 3);
-        head = recursiveKReverse(head.next, 3);
+      //  head = recursiveKReverse(head.next, 3);
         printAll(head);
     }
 

@@ -2,6 +2,19 @@ package stacksqueuesdeque;
 
 import java.util.Stack;
 
+/**
+ * Given an expression string, write a program to check all the pairs of parantheses are valid.
+ *
+ * Input:
+ *
+ * ((a+b)*x - d)
+ * ((a+b]+c)*(d-e)
+ *
+ * Output:
+ *
+ * True
+ * False
+ */
 public class BalancedParantheses {
     public static void main(String[] args) {
         Stack<Character> st = new Stack<>();
