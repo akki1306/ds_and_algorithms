@@ -1,5 +1,19 @@
 package recursion;
 
+/**
+ * N-Queen is a problem if placing N chess queens on NxN
+ * chessboard so that no two queens attach each other
+ *
+ * Input:
+ *
+ * N=4
+ *
+ * Output:
+ *
+ * 2D Matrix with queens
+ *
+ * Note: A Queen can attach diagonally vertically or horizontally
+ */
 public class NQueens {
     public static void main(String[] args) {
         int N = 4;

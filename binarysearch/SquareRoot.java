@@ -2,6 +2,17 @@ package binarysearch;
 
 import java.text.DecimalFormat;
 
+/**
+ * Square roots
+ *
+ * Given an integer N and an integer P, you need to find the square root of
+ * number N upto P places. Do it without using a library function.
+ *
+ * Input Array:
+ * N=10, P=3
+ *
+ * Output: 3.162
+ */
 public class SquareRoot {
     public static void main(String[] args) {
         System.out.println(squareRoot(10, 3));

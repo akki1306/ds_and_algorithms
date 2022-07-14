@@ -2,6 +2,18 @@ package recursion;
 
 import java.util.Arrays;
 
+/**
+ * Sudoku Solver
+ *
+ * Given a partially filled matrix Sudoku Matrix of 9x9,
+ * write a function to fill the matrix using Sudoku rules.
+ *
+ * Input:
+ * 2D Matrix
+ *
+ * Output:
+ * Solved 2D Matrix
+ */
 public class SudokuSolver {
     public static void main(String[] args) {
         int[][] grid = {

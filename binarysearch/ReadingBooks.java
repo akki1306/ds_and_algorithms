@@ -2,6 +2,21 @@ package binarysearch;
 
 import java.util.Arrays;
 
+/**
+ * Given number of pages in n different books and m students. The books are arranged in any order (not necessarily ascending)
+ * of number of pages. Every student is assigned to read some consecutive segment of books. The task is to assign books
+ * in such a way that the maximum number of pages assigned to a student is minimum.
+ *
+ * Find the maximum number of pages that a student will have to read.
+ *
+ * Sample Input:
+ *
+ * books=[10, 20, 30, 15]
+ * students = 2
+ *
+ * Sample Output:
+ * 45
+ */
 public class ReadingBooks {
     public static void main(String[] args) {
         System.out.println(readingBooksMinimizeMaximum(new int[]{10, 20, 30, 40}, 2));

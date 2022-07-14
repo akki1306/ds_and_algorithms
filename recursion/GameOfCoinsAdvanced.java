@@ -12,6 +12,7 @@ public class GameOfCoinsAdvanced {
         return res;
     }
 
+    // Do your best and expect the worst
     static int gameOfCoins(int[] v, int s, int e, int totalChances) {
         if (e - s + 1 < 0) {
             return 0;

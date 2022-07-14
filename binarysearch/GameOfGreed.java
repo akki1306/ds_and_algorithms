@@ -2,6 +2,22 @@ package binarysearch;
 
 import java.util.Arrays;
 
+/**
+ *  Game of Greed
+ *
+ *  You are playing a game with your 'k' friends. You have an array of N coins, at each index i you have a coin of
+ *  value a[i]. Your task is to divide the coins, amoung a group of K friends by doing consecutive segments (k-subarray)
+ *  of the array. Each friend will get a total sum of coins in that subarray. Since all your friends are greedy and they
+ *  will pick the largest k-1 segments and you will get the smallest segment. Find out the maximum value you can make by
+ *  making an optimal partition.
+ *
+ *  Note: The coin array may or may not be sorted
+ *
+ *  Input:
+ *
+ *  K = 3
+ *  coins={1,2,3,4}
+ */
 public class GameOfGreed {
     public static void main(String[] args) {
         System.out.println(gameOfGreedMaximizeMinimum(new int[]{1, 2, 3, 4}, 3));

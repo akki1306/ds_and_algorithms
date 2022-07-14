@@ -3,6 +3,18 @@ package recursion;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Given a number N and a modern phone keypad. Find out all possible strings
+ * generated using that number.
+ *
+ * Sample Input:
+ *
+ * 23
+ *
+ * Sample Output:
+ *
+ * AD, AE, AF, BD, BE, BF, CD, CE, CF
+ */
 public class PhoneKeypad {
     static String[] keypad = {"", "", "ABC", "DEF", "GHI", "JKL", "MNO", "PQRS", "TUV", "WXYZ"};
 

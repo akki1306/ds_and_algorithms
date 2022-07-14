@@ -2,6 +2,20 @@ package binarysearch;
 
 import java.util.Arrays;
 
+/**
+ * Angry Birds
+ *
+ * There is a long wire along at straight line, which contains N bird nests
+ * at position x1, x2,...,xN.
+ *
+ * There are B(B<=N) birds, which become angry towards each other once put into
+ * a nest. To put the birds from hurting each other you want to assign birds to nests
+ * such that minimum distance between any two birds is as large as possible. What is
+ * the largest minimum distance?
+ *
+ * Sample Input:
+ *
+ */
 public class AngryBirds {
     public static void main(String[] args) {
         System.out.println(angryBirdsMinimizeMaximumDistanceToNotLetBirdsAngry(new int[]{1, 2, 4, 8, 9}, 3));
@@ -12,7 +26,7 @@ public class AngryBirds {
         Arrays.sort(arr);
         int N = arr.length;
         int start = 0;
-        int end = arr[N - 1] - arr[0];
+        int end = arr[N - 1] - arr[0]; // Search space is the distance between two birds
         int mid;
         int ans = -1;
         while (start <= end) {

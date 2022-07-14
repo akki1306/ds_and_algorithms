@@ -3,6 +3,17 @@ package recursion;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Given a string s, find all permutations of a given string.
+ *
+ * Input:
+ *
+ * abc
+ *
+ * Output:
+ *
+ * abc, acb, bac, bca, cab, cba
+ */
 public class Permutations {
     public static void main(String[] args) {
         List<String> res = new ArrayList<>();

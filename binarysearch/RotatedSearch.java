@@ -1,5 +1,20 @@
 package binarysearch;
 
+/**
+ * Rotated Search
+ *
+ * Write a function that takes input an sorted array of distinct integers,
+ * which is rotated about a pivot point and finds the index of any given element.
+ *
+ * Input:
+ *
+ * [7,9,10,1,2,3,4,5,6]
+ * element=4
+ *
+ * Output:
+ * 6
+ *
+ */
 public class RotatedSearch {
     public static void main(String[] args) {
         System.out.println(rotatedSearch(new int[]{7, 9, 10, 1, 2, 3, 4, 5, 6}, 10));

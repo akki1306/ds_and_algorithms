@@ -2,6 +2,26 @@ package binarysearch;
 
 import java.util.Arrays;
 
+/**
+ *
+ * <b>Min Pairs</b>
+ *
+ * Given two non-empty arrays, find the pair of numbers (one from each array) whose
+ * absolute difference is minimum. Print any one pair with the smallest difference.
+ *
+ * Sample Input:
+ *
+ * a1 = [-1, 5, 10, 20, 3]
+ * a2 = [26, 134, 135, 15, 17]
+ *
+ * Sample Output:
+ *
+ * [20, 17]
+ *
+ *
+ * Note: Lower bound is strictly greater than or equal to the element
+ * Upper bound is strictly greater than the element.
+ */
 public class MinPairs {
     public static void main(String[] args) {
         //  System.out.println(Math.abs(Collections.binarySearch(l, 11) + 1));
@@ -18,12 +38,14 @@ public class MinPairs {
         for (int i = 0; i < a1.length; i++) {
             int lb = lower_bound(a2, a1[i]);
 
+            // compare with element at lowerbound - 1
             if (lb >= 1 && (a1[i] - a2[lb - 1]) < diff) {
                 diff = a1[i] - a2[lb - 1];
                 pair[1] = a1[i];
                 pair[0] = a2[lb - 1];
             }
 
+            // compare with element at lower bound
             if (lb != a2.length && (a2[lb] - a1[i]) < diff) {
                 diff = a2[lb] - a1[i];
                 pair[1] = a2[lb];

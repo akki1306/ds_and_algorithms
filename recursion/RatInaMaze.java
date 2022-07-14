@@ -3,6 +3,21 @@ package recursion;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * You are given a an integer N and a grid of size NxN. The cells of the grid are numbered row wise
+ * from 1 to N^2. Rat wants to travel from cell number 1 to cell number N^2, and it can move only in
+ * right direction or down direction from particular cell. There is exactly one path from source
+ * to destination as come cells are blocked. Help the rat to find the path.
+ *
+ * Input Format:
+ *
+ * In the function an integer N is given and a 2D vector consisting of only 'O's and 'X's is given
+ * where 'X' represent blocked cell.
+ *
+ * Output Format:
+ *
+ * Return a vector of cell numbers of cells in path(in sequence)
+ */
 public class RatInaMaze {
     public static void main(String[] args) {
         int[][] arr = {

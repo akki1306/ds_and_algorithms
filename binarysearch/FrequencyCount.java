@@ -1,5 +1,16 @@
 package binarysearch;
 
+/**
+ * Given a sorted array which can contain repeated elements, and an element K
+ * we need to find frequency of a given element.
+ *
+ * Input Array:
+ * [0,1,1,1,1,2,2,2,3,4,4,5,10]
+ * Key=3
+ *
+ * Output: 3
+ *
+ */
 public class FrequencyCount {
     public static void main(String[] args) {
         int[] arr = new int[]{0, 1, 1, 2, 3, 3, 3, 3, 4, 5, 5, 5, 10};
