@@ -1,5 +1,22 @@
 package slidingwindow;
 
+/**
+ * Given two strings, one big string and one small string, find the 'smallest window'
+ * in the big string that contains all the characters of the small string.
+ *
+ * - Window can have additional characters than required
+ * - If the small string has duplicates, then those duplicates must be present
+ *   with same or higher count in the window.
+ *
+ *   Input:
+ *
+ *   s1 = hello_world
+ *   s2 = lol
+ *
+ *   Output:
+ *
+ *   llo
+ */
 public class StringWindow {
     public static void main(String[] args) {
         System.out.println(stringWindow("hello", "eo"));

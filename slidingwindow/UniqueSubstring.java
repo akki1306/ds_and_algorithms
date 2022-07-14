@@ -4,6 +4,18 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Given a string, write a function to find the largest substring with
+ * unique characters (no duplicates)
+ * <p>
+ * Sample Input:
+ * prateekbhaiya
+ * aabcb
+ * <p>
+ * Sample Output:
+ * ekbhaiy
+ * abc
+ */
 public class UniqueSubstring {
     public static void main(String[] args) {
 //        System.out.println(largestSubstringUniqueCharacters("prateekbhaiya"));
@@ -71,7 +83,7 @@ public class UniqueSubstring {
                 start = i;
             }
         }
-        return s.substring(start, start+ maxWindowLen);
+        return s.substring(start, start + maxWindowLen);
     }
 
     private static String uniqueString(String s) {
