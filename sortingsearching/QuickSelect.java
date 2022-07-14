@@ -1,5 +1,18 @@
 package sortingsearching;
 
+/**
+ * Write a function that takes input an array of distinct integers, and returns kth smallest
+ * in the array.
+ *
+ * Sample Input:
+ *
+ * [10,5,2,0,7,6,4]
+ * k=4
+ *
+ * Sample Output:
+ * 5
+ *
+ */
 public class QuickSelect {
     public static void main(String[] args) {
         int[] arr = {10, 5, 2, 0, 7, 6, 4};

@@ -1,5 +1,18 @@
 package sortingsearching;
 
+/**
+ * Given a sorted array of strings that is interspersed with empty strings, write a method
+ * to find location of a given string.
+ *
+ * Input:
+ *
+ * ["ai","","","bat","","","car","cat","","","dog",""]
+ * bat
+ *
+ * Output:
+ *
+ * 4
+ */
 public class SparseSearch {
     public static void main(String[] args) {
         String[] arr = {"ai", "", "", "bat", "", "", "car", "cat", "", "", "dog", "e"};
@@ -15,7 +28,7 @@ public class SparseSearch {
             int mid = (start + end) / 2;
             if (arr[mid] == "") {
                 int left = mid;
-                while (arr[--left] == "" && left >= start) ;
+                while (arr[--left] == "" && left >= start);
                 if (arr[left].compareTo(search) == 0)
                     return left;
                 else if (search.compareTo(arr[left]) > 0) {

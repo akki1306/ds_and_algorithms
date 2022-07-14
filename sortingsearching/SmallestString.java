@@ -6,6 +6,14 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * You are given a list of n strings a1,a2,...an. You'd like to concatenate
+ * them together in some order such that the resulting string would be
+ * lexicographically smallest.
+ *
+ * Given the list of strings, output the lexicographically smallest
+ * concatenation.
+ */
 public class SmallestString {
     public static void main(String[] args) {
         System.out.println(smallestString(Arrays.asList("c","cb","cba")));
