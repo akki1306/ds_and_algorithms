@@ -2,6 +2,21 @@ package dynamicprogramming2D;
 
 import java.util.Arrays;
 
+/**
+ * Longest Common Subsequence
+ *
+ * Given two sequences, find the length of longest subsequence which is common to both
+ * of them.
+ *
+ * Input
+ *
+ * s1 = "ABCD"
+ * s2 = "ABEDG"
+ *
+ * Output:
+ * 3
+ * (ABD)
+ */
 public class LongestCommonSubsequence {
     public static void main(String[] args) {
         System.out.println(lcsRecursive("ABCD", "ABEDG", 0, 0));

@@ -1,5 +1,20 @@
 package dynamicprogramming2D;
 
+/**
+ * Counting Subsequences
+ *
+ * Given two strings, find the number of times the second string occurs as a
+ * subsequence in the first string.
+ *
+ * Input:
+ *
+ * s1 = "ABCDE"
+ * s2 = "ABC"
+ *
+ * Output:
+ *
+ * 2
+ */
 public class SubsequenceCount {
     public static void main(String[] args) {
         System.out.println(subsequenceCount("ABBCCCCEDG", "ABC", 6, 2));

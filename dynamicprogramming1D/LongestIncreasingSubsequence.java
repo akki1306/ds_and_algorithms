@@ -2,6 +2,19 @@ package dynamicprogramming1D;
 
 import java.util.Arrays;
 
+/**
+ * Given an array sequence, find the length of the longest subsequence
+ * such that all elements of the subsequence are sorted in increasing
+ * order.
+ *
+ * Input:
+ *
+ * {50, 4, 10, 8, 30, 100}
+ *
+ * Output:
+ * 4
+ * {4,8,30,100}
+ */
 public class LongestIncreasingSubsequence {
     public static void main(String[] args) {
         System.out.println(longestIncreasingSubsequenceDp(new int[]{50, 4, 10, 8, 30, 100}));

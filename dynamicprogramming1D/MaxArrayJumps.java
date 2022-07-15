@@ -2,6 +2,20 @@ package dynamicprogramming1D;
 
 import java.util.Arrays;
 
+/**
+ * Given an array of positive integers, where each element represents max no of steps
+ * you can jump forward in the array.
+ *
+ * Find the minimum jumps needed to reach the final index.
+ *
+ * Input:
+ *
+ * arr = [3 4 2 1 2 3 10 1 1 1 2 5]
+ *
+ * Output:
+ * 4
+ * 3 -> 4 -> 2 -> 7 -> 5
+ */
 public class MaxArrayJumps {
     public static void main(String[] args) {
         System.out.println(maxArrayJumpsRecursive(new int[]{3, 4, 2, 1, 2, 3, 7, 1, 1, 1, 2, 5}, 1));

@@ -4,6 +4,39 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Objects;
 
+/**
+ * Box Stacking Problem
+ *
+ * We are given an array of boxes. Each box is represented using 3 integers denoting
+ * height, width, depth of the box. Our goal is stack up the boxes and maximize the total
+ * height of the stack.
+ *
+ * You cant rotate any box i.e. integers in each box must represent [width, height, depth]
+ * at all times.
+ *
+ * A box must have strictly smaller width, depth, and height than any other box below it.
+ *
+ * Input:
+ *
+ * Boxes=[
+ * [2,1,2],
+ * [3,2,3],
+ * [2,2,8],
+ * [2,3,4],
+ * [2,2,1],
+ * [4,4,5]
+ * ]
+ *
+ * Output:
+ *
+ * 10
+ *
+ * Explanation: We can stack 3 boxes to get height 10.
+ *
+ * [2,1,2]
+ * [3,2,3]
+ * [4,4,5]
+ */
 public class BoxStackingProblem {
     public static void main(String[] args) {
         Box[] boxArr = {

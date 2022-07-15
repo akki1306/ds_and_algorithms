@@ -7,6 +7,21 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Prateek Bhaiya while working at Google often encounters string problems, so this time he is asking for your
+ * help to solve this problem. You are given a list of non-empty strings and you have to return a list of all
+ * "Googly" strings found in the input list.
+ *
+ * A string is said to be Googly if it is exactly made up of atleast two instances of other string in the input
+ * list of strings.
+ *
+ * In order for a string to be googly, just containing two instances of other string isnt sufficient, the string be
+ * exactly made up of those strings. For example, in this list ["a", "b", "abc"] the string "abc" isnt googly, even
+ * though it contains "a" and "b", but "c" isnt a string in the list.
+ *
+ * Note that strings can be repeated to form a special string, for example in the list ["a", "aaa"], the string
+ * "aaa" is a googly string because it is made up of three repeated instances of "a".
+ */
 public class GooglyStrings {
     public static void main(String[] args) {
         Trie t = new Trie();

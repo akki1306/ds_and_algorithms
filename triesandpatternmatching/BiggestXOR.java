@@ -1,5 +1,21 @@
 package triesandpatternmatching;
 
+/**
+ * Given an array, find the maximum XOR that you can form by picking two
+ * numbers from the array.
+ *
+ * Input:
+ *
+ * input[] = {3, 10, 5, 8, 2, 25};
+ *
+ * Output:
+ *
+ * 28
+ *
+ * Explanation:
+ *
+ * XOR of 5 ^ 25 = 28
+ */
 public class BiggestXOR {
     public static void main(String[] args) {
         biggestXOR(new int[]{3, 10, 5, 8, 2, 25});

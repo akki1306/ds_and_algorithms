@@ -6,6 +6,20 @@ import triesandpatternmatching.ds.Trie;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Little cute kitten loves to write stories in a Github README document. One day she is
+ * given a list of words, you want to help her to check if each of these words are present in
+ * the README file
+ *
+ * Input:
+ *
+ * document = "little cute cat loves to code in c++, java & python"
+ * words = ["cute cat", "ttle", "cutest", "cat", "quick","big"]
+ *
+ * Sample Output:
+ *
+ * yes, yes, yes, no, no
+ */
 public class CuteLittleCat {
     public static void main(String[] args) {
         cuteLittleCat("little cute cat loves to code in c++, java & python", new String[]{"cute cat", "ttle", "cat", "quick", "big"});

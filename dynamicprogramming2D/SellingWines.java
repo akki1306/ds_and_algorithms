@@ -2,9 +2,31 @@ package dynamicprogramming2D;
 
 import java.util.Arrays;
 
+/**
+ * Wines Problem
+ *
+ * There is a collection of N wines places linearly on shelf, the price of ith wine is pi.
+ *
+ * Since the wines get better every year, suppose today is the year 1, on every year y the
+ * price of the ith wine be y*pi i.e. y-times the value that current year.
+ *
+ * You want to sell all the wines you have, but you want to sell exactly one wine per year,
+ * starting this year. One more constraint - on each year you can sell either leftmost or
+ * rightmost wine without re-ordering.
+ *
+ * Find the maximum profit you can get if you sell all the wines in optimal order.
+ *
+ * Sample Input:
+ *
+ * Wines Prices = [2, 3, 5, 1, 4]
+ *
+ * Output
+ *
+ * 50
+ */
 public class SellingWines {
     public static void main(String[] args) {
-        System.out.println(sellingWinesRecursive(new int[]{2, 3, 5, 1, 4}, 1, 1, 5));
+        System.out.println(sellingWinesRecursive(new int[]{2, 3, 5, 1, 4}, 1, 0, 4));
         int[][] dp = new int[5][5];
         System.out.println(sellingWinesRecursiveMemoization(new int[]{2, 3, 5, 1, 4}, 1, 0, 4, dp));
 
@@ -17,10 +39,10 @@ public class SellingWines {
 
     private static int sellingWinesRecursive(int[] arr, int year, int i, int j) {
         if (i == j)
-            return arr[i - 1] * year;
+            return arr[i] * year;
 
-        int a = year * arr[i - 1] + sellingWinesRecursive(arr, year + 1, i + 1, j);
-        int b = year * arr[j - 1] + sellingWinesRecursive(arr, year + 1, i, j - 1);
+        int a = year * arr[i] + sellingWinesRecursive(arr, year + 1, i + 1, j);
+        int b = year * arr[j] + sellingWinesRecursive(arr, year + 1, i, j - 1);
         int max = Math.max(a, b);
         return max;
     }

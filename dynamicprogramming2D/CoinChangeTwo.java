@@ -1,5 +1,40 @@
 package dynamicprogramming2D;
 
+/**
+ * Coin Change 2
+ *
+ * Given a value N and an integer vector COINS representing coins of different denominations. Considering you
+ * have infinite supply of each coin, your task is to find total number of combinations of these coins that
+ * make a sum of N.
+ *
+ * If that amount of money cannot be made up by any combination of the coins, return 0.
+ *
+ * Input Format:
+ *
+ * In the function an integer N is given, and a vector COINS consisting of coins.
+ *
+ * Output Format:
+ *
+ * Return an integer representing total number of combinations.
+ *
+ * Constraint:
+ *
+ * Total number of ways <= 10^12
+ *
+ * Sample Testcase:
+ *
+ * Input:
+ *
+ * 1 2 3
+ *
+ * Output:
+ *
+ * 4
+ *
+ * Explanation:
+ *
+ * {1,1,1,1},{1,1,2},{1,3},{2,2} are different combinations having a sum of 4.
+ */
 public class CoinChangeTwo {
 
     public static void main(String[] args) {

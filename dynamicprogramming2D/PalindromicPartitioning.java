@@ -2,6 +2,32 @@ package dynamicprogramming2D;
 
 import java.util.Arrays;
 
+/**
+ * Palindromic Partitioning
+ *
+ * Given a string s, your task is to partition s such that every substring of the partition is palindrome
+ *
+ * Return the minimum number of cuts needed for a palindrome partitioning of s.
+ *
+ * Examples:
+ *
+ * Input str = "geek"
+ * Output: 2
+ *
+ * We need to make minimum 2 cuts, i.e. "g | ee | k"
+ *
+ * Input str = "aaaa"
+ *
+ * Output: 0
+ *
+ * The string is already a palindrome
+ *
+ * Input str = "abcde"
+ * Output: we need to make 4 cuts, i.e. "a|b|c|d|e"
+ *
+ * Input str = "abbac"
+ * Output: 1 i.e. abba | c
+ */
 public class PalindromicPartitioning {
     public static void main(String[] args) {
         String s = "geek";

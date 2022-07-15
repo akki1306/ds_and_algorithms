@@ -4,6 +4,9 @@ import triesandpatternmatching.ds.Trie;
 
 import java.util.Arrays;
 
+/**
+ * Implementation of Trie data structure
+ */
 public class PrefixTries {
     public static void main(String[] args) {
         Trie t = new Trie();

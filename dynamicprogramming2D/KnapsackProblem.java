@@ -1,5 +1,19 @@
 package dynamicprogramming2D;
 
+/**
+ * Knapsack Problem
+ *
+ * Given weights and prices of n items, we need put a subset of items in a bag of
+ * capacity W such that we get maximum total value in the bag, also known as knapsack.
+ *
+ * Input:
+ * N=4 W=11
+ * wts=[2,7,3,4]
+ * prices=[5,20,20,10]
+ *
+ * Output:
+ * 40
+ */
 public class KnapsackProblem {
     public static void main(String[] args) {
         System.out.println(knapsackProblem(11, new int[]{2, 7, 3, 4}, new int[]{5, 20, 20, 10}, 0));

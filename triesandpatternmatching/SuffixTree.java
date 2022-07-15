@@ -2,6 +2,9 @@ package triesandpatternmatching;
 
 import triesandpatternmatching.ds.Trie;
 
+/**
+ * Trie containing all the suffixes of a given string
+ */
 public class SuffixTree {
     public static void main(String[] args) {
         Trie t = new Trie();
