@@ -2,6 +2,12 @@ package binarysearchtree;
 
 import binarysearchtree.ds.Node;
 
+/**
+ * Closest in BST
+ *
+ * Function to find the integer closest to a given target value
+ * in a BST.
+ */
 public class ClosestInBST {
     public static void main(String[] args) {
         Node root = BSTCreation.createBinarySearchTree(new int[]{8, 3, 10, 1, 6, 14, 4, 7, 13});

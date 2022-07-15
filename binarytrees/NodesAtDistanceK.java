@@ -2,6 +2,14 @@ package binarytrees;
 
 import binarytrees.ds.Node;
 
+/**
+ * Nodes at distance K
+ *
+ * Given a Binary Tree, and a Target Node T. Find all nodes at distance K from
+ * given node, where K is also an integer input.
+ *
+ *
+ */
 public class NodesAtDistanceK {
     public static void main(String[] args) {
         Node root = BuildLevelOrder.buildLevelOrder(new int[]{1, 2, 3, 4, 5, -1, 6, -1, -1, 7, 8, -1, -1, -1, -1, 9, 10});

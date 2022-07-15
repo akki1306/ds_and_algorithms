@@ -2,6 +2,13 @@ package binarysearchtree;
 
 import binarysearchtree.ds.Node;
 
+/**
+ * Min Height BST
+ *
+ * Given a sorted array, construct a BST of minimum height
+ *
+ * 1 2 3 4 5 6 7
+ */
 public class MinHeightBST {
     public static void main(String[] args) {
         int[] arr = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9};

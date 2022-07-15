@@ -5,6 +5,21 @@ import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
 
+/**
+ * Max Subarray
+ *
+ * Given an array and an integer k, find the maximum for each and every contiguous subarray of size k.
+ *
+ * Sample Input:
+ *
+ * N = 9
+ * arr[] = {1 2 3 1 4 5 2 3 6}
+ * k=3
+ *
+ * Output:
+ *
+ * 3 3 4 5 5 5 6
+ */
 public class MaxSubArraySlidingWindowDeque {
     public static void main(String[] args) {
         System.out.println(maxSubArray(new int[]{1, 2, 3, 1, 4, 5, 2, 3, 6, 7}, 3));

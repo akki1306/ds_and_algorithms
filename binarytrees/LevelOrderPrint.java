@@ -6,6 +6,24 @@ import binarytrees.ds.Tree;
 import java.util.Queue;
 import java.util.concurrent.LinkedBlockingQueue;
 
+/**
+ * Print level order (BFS)
+ *
+ * Print a Binary Tree using a Level Order Traversal
+ *
+ * Input Tree
+ *        1
+ *      2   3
+ *    4   5   6
+ *      7
+ *
+ * Output
+ *
+ * 1
+ * 2 3
+ * 4 5 6
+ * 7
+ */
 public class LevelOrderPrint {
     public static void main(String[] args) {
         Tree tree = new Tree();

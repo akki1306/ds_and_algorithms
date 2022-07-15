@@ -5,6 +5,20 @@ import java.util.Collections;
 import java.util.List;
 import java.util.PriorityQueue;
 
+/**
+ * Running Median
+ *
+ * You are given a running stream of integers. Write an efficient algorithm
+ * to output median of numbers read so far after every input.
+ *
+ * Sample Input:
+ *
+ * 10 5 2 3 0 12 18 20 22
+ *
+ * Sample Output:
+ *
+ * 10 7.5 5 4 3 4 5 7.5 10
+ */
 public class RunningMedian {
     public static void main(String[] args) {
         System.out.println(runningMedian(new int[]{5, 10, 2, 3, 0, 12, 18, 20, 22}));

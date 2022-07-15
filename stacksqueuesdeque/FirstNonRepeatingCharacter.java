@@ -3,9 +3,25 @@ package stacksqueuesdeque;
 import java.util.*;
 import java.util.concurrent.LinkedBlockingDeque;
 
+/**
+ * First Non Repeating Character
+ *
+ * You are given a running stream of characters, output the first
+ * non repeating character in the string formed so far after every
+ * new character you get in input. Output -1 if such a character
+ * doesnt exists.
+ *
+ * Input
+ *
+ * a a b c c b c d
+ *
+ * Output
+ *
+ * a -1 b b b -1 -1 d
+ */
 public class FirstNonRepeatingCharacter {
     public static void main(String[] args) {
-        String s = "aabcbcd";
+        String s = "aabccbcd";
         System.out.println(firstNonRepeatingCharacter(s));
     }
 
@@ -29,7 +45,7 @@ public class FirstNonRepeatingCharacter {
                 }
             }
             if (queue.isEmpty())
-                result.add('0');
+                result.add('1');
         }
         return result;
     }

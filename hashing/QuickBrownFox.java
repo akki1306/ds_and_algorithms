@@ -3,6 +3,17 @@ package hashing;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Quick Brown Fox:
+ *
+ * Given a string without spaces and a list of words. Write a  function that finds the min bars
+ * to be added to the string so that all resulting words in are found in the list.
+ *
+ * Sample Input:
+ *
+ * String s = "thequickbrownfox"
+ * words = ["the","quickbrown","fox","quick", "brown"]
+ */
 public class QuickBrownFox {
     public static void main(String[] args) {
 

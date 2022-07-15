@@ -2,6 +2,16 @@ package binarysearchtree;
 
 import binarysearchtree.ds.Node;
 
+/**
+ * Lowest Common Ancestor
+ *
+ * Given a Binary Search Tree and values of two nodes that lie, inside the tree, find the Lowest Common Ancestor.
+ *
+ * Let T be the rooted tree. The lowest common ancestor between two nodes n1 and n2 is defined as the lowest node in
+ * T that has both n1 and n2 as descendents(where we allow node to be descendent of itself).
+ *
+ * You may assume that both values exist in the tree and are unique.
+ */
 public class LowestCommonAncestor {
     public static void main(String[] args) {
         //balanced tree

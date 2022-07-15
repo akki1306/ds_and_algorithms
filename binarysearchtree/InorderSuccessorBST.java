@@ -28,7 +28,8 @@ public class InorderSuccessorBST {
                 } else if (target.val > root.val) {
                     root = root.right;
                 } else {
-                    break; // important to avoid full unnecessary traversal of tree, just break as soon as you reach target node and return the last node with largest value greater than target node
+                    break; // important to avoid full unnecessary traversal of tree, just break as soon as you reach target node
+                    // and return the last node with largest value greater than target node
                 }
             }
 

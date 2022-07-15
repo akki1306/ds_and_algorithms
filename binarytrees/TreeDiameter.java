@@ -3,6 +3,12 @@ package binarytrees;
 import binarytrees.ds.Node;
 import binarytrees.ds.Tree;
 
+/**
+ * Tree Diameter
+ *
+ * Find the diameter of the tree.
+ * Diameter is defined as the largest difference between any two nodes of the binary tree,
+ */
 public class TreeDiameter {
     public static void main(String[] args) {
         Tree tree = new Tree();

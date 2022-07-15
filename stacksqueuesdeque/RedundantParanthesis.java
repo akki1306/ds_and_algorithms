@@ -2,6 +2,22 @@ package stacksqueuesdeque;
 
 import java.util.Stack;
 
+/**
+ * Redundant Paranthesis
+ *
+ * Given a string of balanced expression, find if it contains redundant
+ * paranthesis or not. A set of paranthesis are redundant if same sub-expression
+ * is sorrounded by unnecessary or multiple brackets. Print 'Yes' if redundant else
+ * 'No'
+ *
+ *  Input               Output
+ *
+ *  ((a+b))             Yes
+ *  (a+(b)/c)           Yes
+ *  (a+b*(c-d))         No
+ *
+ * Hint: If there is no operator in between the brackets then the brackets are redundant
+ */
 public class RedundantParanthesis {
     public static void main(String[] args) {
         Stack<Character> stack = new Stack<>();

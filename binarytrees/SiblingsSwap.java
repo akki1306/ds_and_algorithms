@@ -2,6 +2,12 @@ package binarytrees;
 
 import binarytrees.ds.Node;
 
+/**
+ * Siblings Swap
+ *
+ * Determine if a binary tree can be converted to another by doing any number of swaps
+ * of children!
+ */
 public class SiblingsSwap {
     public static void main(String[] args) {
         Node root1 = BuildLevelOrder.buildLevelOrder(new int[]{6, 3, 8, 1, 7, 4, 2, -1, -1, -1, -1, 7, 1, -1, 3});

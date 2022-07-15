@@ -3,6 +3,12 @@ package hashing;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Break the chain
+ *
+ * Given a linked list which contains a cycle, build hasing based algorithm to break the cycle and return the head
+ *
+ */
 public class BreakTheChain {
     public static void main(String[] args) {
         Node head = createLinkedList(new int[]{1, 2, 3, 4, 5});

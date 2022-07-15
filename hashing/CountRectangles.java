@@ -5,6 +5,21 @@ import hashing.ds.PointComparator;
 
 import java.util.*;
 
+/**
+ * Counting Rectangles
+ *
+ * Given N Cartesian Points in a 2D plane, find the number of axis parallel rectangles
+ * that can be formed?
+ *
+ * Sample Input:
+ *
+ * N = 8
+ * [(0,0),(0,1),(1,1),(1,0),(2,1),(2,0),(3,1),(3,0)]
+ *
+ * Output:
+ *
+ * 6
+ */
 public class CountRectangles {
     public static void main(String[] args) {
         System.out.println(countRectangles(Arrays.asList(

@@ -2,6 +2,12 @@ package binarysearchtree;
 
 import binarysearchtree.ds.Node;
 
+/**
+ * Flatten the tree
+ *
+ * Given a BST convert it to a sorted linked list, right pointer should behave
+ * as next pointer for the linked list.
+ */
 public class TreeToLinkedList {
     public static void main(String[] args) {
         Node root = BSTCreation.createBinarySearchTree(new int[]{4, 2, 6, 1, 3, 5, 7});

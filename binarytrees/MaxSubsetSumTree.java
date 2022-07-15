@@ -2,6 +2,13 @@ package binarytrees;
 
 import binarytrees.ds.Node;
 
+/**
+ * Max Subset Sum
+ *
+ * Find the largest sum of a subset of nodes in a binary tree, such that if a node
+ * is included in the sum then its parent and children must not be included in the
+ * subset sum.
+ */
 public class MaxSubsetSumTree {
     public static void main(String[] args) {
         Node root = BuildLevelOrder.buildLevelOrder(new int[]{1, 2, 3, 4, 5, 6, -1, -1, -1, 7, -1});

@@ -3,6 +3,11 @@ package binarysearchtree;
 import binarytrees.BuildLevelOrder;
 import binarytrees.ds.Node;
 
+/**
+ * IsBST
+ *
+ * Given a binary tree, Check if the tree is a BST or not!
+ */
 public class IsBinarySearchTree {
     public static void main(String[] args) {
         // not a binary tree

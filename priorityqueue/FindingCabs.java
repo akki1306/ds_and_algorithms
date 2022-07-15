@@ -2,6 +2,20 @@ package priorityqueue;
 
 import java.util.*;
 
+/**
+ * Finding cabs
+ *
+ * Given N Cartesian points in a 2D plane each represents the location of the cab.
+ * You are standing at the origin, you want to know the names of the nearest cab.
+ *
+ * Sample Input             Output
+ * N = 5, K = 3             C4
+ * C1 1 1                   C1
+ * C2 2 1                   C2
+ * C3 3 2
+ * C4 0 1
+ * C5 2 3
+ */
 public class FindingCabs {
     public static void main(String[] args) {
         Car C1 = new Car("C1", 1, 1);

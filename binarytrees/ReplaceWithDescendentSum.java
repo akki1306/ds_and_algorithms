@@ -3,6 +3,12 @@ package binarytrees;
 import binarytrees.ds.Node;
 import binarytrees.ds.Tree;
 
+/**
+ * Replace with Sum
+ *
+ * Given a binary tree, replace every node by sum of all its
+ * descendents, leave leaf nodes intact.
+ */
 public class ReplaceWithDescendentSum {
     public static void main(String[] args) {
         Tree tree = new Tree();

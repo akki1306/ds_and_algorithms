@@ -2,6 +2,13 @@ package binarytrees;
 
 import binarytrees.ds.Node;
 
+/**
+ * Print at Level K
+ *
+ * Print all nodes at level K from the root node.
+ *
+ * K=2
+ */
 public class PrintLevelK {
     public static void main(String[] args) {
         Node root = BuildLevelOrder.buildLevelOrder(new int[]{1, 2, 3, 4, 5, 6, -1, -1, -1, 7, -1});

@@ -5,6 +5,14 @@ import java.util.List;
 import java.util.Objects;
 import java.util.PriorityQueue;
 
+/**
+ * K-way merge
+ *
+ * The k-way merge problem consists of merging k sorted arrays to produce
+ * a single sorted array with the same elements.
+ *
+ * k-way merges are used in external sorting procedures. External
+ */
 public class MergeKSortedArrays {
     public static void main(String[] args) {
         System.out.println(mergeKArrays(new int[][]{{10, 15, 20, 30}, {2, 5, 8, 14, 24}, {0, 11, 60, 90}}, 3));
